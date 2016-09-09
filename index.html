@@ -33,22 +33,7 @@ var i = 0
 while(el["done"] != true)
 {  
   obj = el["value"]      
-  if(i%3 == 0)
-  {
-    document.write("<tr>")
-  }
-  i++
-  document.write("<td class=\"cell\">"+
-    "<div class=\"hovereffect\">"+
-        "<img src=\""+obj["img"]+"\" class=\"rimg\">"+
-        "<div class=\"overlay\">"+
-           "<h2>"+obj["name"]+"</h2>"+
-           "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>"+
-        "</div></div></td>")
-  if(i%3 == 0)
-  {
-    document.write("</tr>")
-  } 
+  writeObj(obj)
   el = iter.next()
 }
 </script>
