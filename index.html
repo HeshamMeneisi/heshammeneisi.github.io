@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <title>About me</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<script src="js/script.js"></script>
+<div class="cont">
 
 <p class="tpargh">
 Hello
@@ -25,36 +26,34 @@ Hello
 
 <div class="ptb">
 <table cellspacing="0" cellpadding="0">
-<tr>
-<td><div class="cell">
-    <div class="hovereffect">
-        <img src="images/shannon.png" class="rimg">
-        <div class="overlay">
-           <h2>Shannon</h2>
-           <a class="info" href="https://github.com/HeshamMeneisi/Shannon">Go to repo</a>
-        </div>
-    </div>
-</div></td>
-<td><div class="cell">
-    <div class="hovereffect">
-        <img src="images/lonewolf.png" class="rimg">
-        <div class="overlay">
-           <h2>Lone Wolf</h2>
-           <a class="info" href="https://github.com/HeshamMeneisi/Lone-Wolf">Go to repo</a>
-        </div>
-    </div>
-</div></td>
-<td><div class="cell">
-    <div class="hovereffect">
-        <img src="images/inlumino.png" class="rimg">
-        <div class="overlay">
-           <h2>Inlumino</h2>
-           <a class="info" href="https://github.com/HeshamMeneisi/Inlumino">Go to repo</a>
-        </div>
-    </div>
-</div></td>
-</tr>
+<script>
+var iter = getProjObj()
+el = iter.next()
+var i = 0
+while(el["done"] != true)
+{  
+  obj = el["value"]      
+  if(i%3 == 0)
+  {
+    document.write("<tr>")
+  }
+  i++
+  document.write("<td class=\"cell\">"+
+    "<div class=\"hovereffect\">"+
+        "<img src=\""+obj["img"]+"\" class=\"rimg\">"+
+        "<div class=\"overlay\">"+
+           "<h2>"+obj["name"]+"</h2>"+
+           "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>"+
+        "</div></div></td>")
+  if(i%3 == 0)
+  {
+    document.write("</tr>")
+  } 
+  el = iter.next()
+}
+</script>
 </table>
+</div>
 </div>
 
 </body>

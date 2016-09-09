@@ -1,6 +1,11 @@
+*
+{
+	max-width: 100%;
+}
+
 html, body {
-    size: 100%;
-    margin: 0;
+    size: 100% 100%;
+    margin: 0;    
 }
 
 body
@@ -9,58 +14,64 @@ body
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-attachment: fixed;
-	background-size: 100% 100%
+	background-size: 100% 100%;
 }
 
 .tpargh
 {	
 	margin: 0;
-	padding-top: 25vh;
+	padding-top: 30vh;
 	font-size: 25vh;
 	color: white;
 	text-align: center;	
-	height: 100vh; 
-	text-shadow: 0.5vh 0.5vh #000
+	height: 70vh; 
+	text-shadow: 0.5vh 0.5vh #000;
 }
 
-.content,
+.cont
+{
+	max-width: 100%;	
+	margin: 0;
+	overflow: hidden;
+}
+
 .p1,
 .h1
 {
-	margin-bottom: 0;
-	text-align: center;	
-	padding: 2vh;	
+	margin: 0;
+	text-align: center;		
+	width: 100%;	
 }
 
 .h1
 {	
 	font-size: 10vh;
 	background:  lightgray;
-	color: black;
-	margin: 0
+	color: black;	
 }
 
 .p1
-{
-	margin: 0;
-	font-size: 5vh;	
-	background: black;	
+{	
+	font-size: 5vh;		
 	color: lightgray;
+	text-shadow: 0.1vh 0.1vh;
+	background: rgb(0,80,160);
 }
 
 .ptb
-{	
+{		
+	margin: 0;
+	width: 100%;
 	overflow: auto;
-	background: black;	
-	padding-left: 1.5vw;	
+	background: rgb(0,80,160);	
 }
 
 .cell
 {
-	overflow: hidden;
-	padding: 5vh 2vw 5vh 2vw;
-	width:  28vw;		
-	height: 28vw;		
+	display: table-cell;	
+	width:  32%;		
+	height: 30vw;	
+	padding: 2%;	
 }
 
 .rimg
@@ -108,9 +119,9 @@ body
   font-size: 17px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-transform: translateY(45px);
-  -ms-transform: translateY(45px);
-  transform: translateY(45px);
+  -webkit-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  transform: translateY(40px);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -121,10 +132,10 @@ body
   transform: translateY(5px);
 }
 
-.hovereffect a.info {
+.hovereffect a.info {	
   display: inline-block;
   text-decoration: none;
-  padding: 7px 14px;
+  padding: 4% 4%;
   text-transform: uppercase;
   color: #fff;
   border: 1px solid #fff;
@@ -137,8 +148,7 @@ body
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-weight: normal;
-  margin: -52px 0 0 0;
-  padding: 62px 100px;
+  
 }
 
 .hovereffect:hover a.info {
