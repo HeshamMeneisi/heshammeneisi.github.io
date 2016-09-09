@@ -39,6 +39,7 @@ body
 .h1
 {
 	margin: 0;
+  padding: 1%;
 	text-align: center;		
 	width: 100%;	
 }
@@ -55,7 +56,7 @@ body
 	font-size: 5vh;		
 	color: lightgray;
 	text-shadow: 0.1vh 0.1vh;
-	background: rgb(0,80,160);
+	background: rgb(40,80,160);
 }
 
 .ptb
@@ -63,7 +64,7 @@ body
 	margin: 0;
 	width: 100%;
 	overflow: auto;
-	background: rgb(0,80,160);	
+	background: rgb(40,80,160);	
 }
 
 .cell
@@ -71,13 +72,13 @@ body
 	display: table-cell;	
 	width:  32%;		
 	height: 30vw;	
-	padding: 2%;	
+	padding: 2%;	  
 }
 
 .rimg
 {	
 	width: 100%;
-	height: 100%;
+	height: 100%;  
 }
 
 .hovereffect {
@@ -87,7 +88,7 @@ body
   overflow: hidden;
   position: relative;
   text-align: center;
-  cursor: default;  
+  cursor: default;    
 }
 
 .hovereffect .overlay {
@@ -102,8 +103,12 @@ body
   transition: all 0.4s ease-in-out;
 }
 
+.hovereffect:hover{
+  box-shadow: 0 0 5px #fff;
+}
+
 .hovereffect:hover .overlay {
-  background-color: rgba(48, 152, 157, 0.4);
+  background-color: rgba(48, 152, 157, 0.4);  
 }
 
 .hovereffect img {
