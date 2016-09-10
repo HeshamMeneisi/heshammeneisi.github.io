@@ -6,7 +6,8 @@ var projects =
 ["Inlumino","https://github.com/HeshamMeneisi/Inlumino"],
 ["Splash","https://github.com/emam95/Splash"],
 ["Sylla",""],
-["WIS",""]
+["WIS",""],
+["Subtitle Editor",""]
 ];
 
 function* getProjObj(){	
