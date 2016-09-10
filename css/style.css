@@ -43,13 +43,14 @@ body
   padding: 1%;
 	text-align: center;		
 	width: 100%;	
+  box-shadow: 0 0 8px #000;
 }
 
 .h1
 {	
 	font-size: 10vh;
 	background:  lightgray;
-	color: black;	
+	color: black;	  
 }
 
 .p1
@@ -57,7 +58,7 @@ body
 	font-size: 5vh;		
 	color: lightgray;
 	text-shadow: 0.1vh 0.1vh;
-	background: rgb(40,80,160);
+	background: rgb(40,160,240);
 }
 
 .ft
@@ -101,7 +102,8 @@ body
 	margin: 0;
 	width: 100%;
 	overflow: auto;
-	background: rgb(40,80,160);	
+	background: rgb(40,160,240);
+  box-shadow: 0 0 8px #000;
 }
 
 .cell
@@ -126,6 +128,7 @@ body
   position: relative;
   text-align: center;
   cursor: default;    
+  box-shadow: 0 0 5px #000;
 }
 
 .hovereffect .overlay {
