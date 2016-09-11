@@ -1,20 +1,20 @@
-var projects = 
+var projects =
 [
-["Shannon","https://github.com/HeshamMeneisi/Shannon"],
-["Lone Wolf","https://github.com/HeshamMeneisi/Lone-Wolf"],
-["ASMSharp","https://github.com/HeshamMeneisi/ASMSharp"],
-["Inlumino","https://github.com/HeshamMeneisi/Inlumino"],
-["Splash","https://github.com/emam95/Splash"],
-["Sylla",""],
-["WIS",""],
-["Subtitle Editor",""]
+["Shannon","https://github.com/HeshamMeneisi/Shannon", "A mason SFG design and analysis tool."],
+["Lone Wolf","https://github.com/HeshamMeneisi/Lone-Wolf", "A puzzle/adventure game in XNA."],
+["ASMSharp","https://github.com/HeshamMeneisi/ASMSharp", "A highly customizable assembly IDE."],
+["Inlumino","https://github.com/HeshamMeneisi/Inlumino", "A cross-platform puzzle game."],
+["Splash","https://github.com/emam95/Splash", "A graphics design stub project in java."],
+["Sylla", "", "A custom math script in C++."],
+["WIS", "", "An input recorder and simulator for windows."],
+["Subtitle Editor", "", "A subtitle file editor."]
 ];
 
-function* getProjObj(){	
+function* getProjObj(){
 	for (var i = 0;i<projects.length;i++)
-	{					
-		p = projects[i][0]		
-		yield {name : p,img:"images/"+ p.toLowerCase().replace(" ","")+".png",link:projects[i][1]}
+	{
+		p = projects[i][0]
+		yield {name : p,img:"images/"+ p.toLowerCase().replace(" ","")+".png",link:projects[i][1], desc:projects[i][2]}
 	}
 }
 
@@ -24,18 +24,22 @@ function writeObj(obj){
     	document.write("<tr>")
   	}
   	i++
-  	var hr = ""
-  	if(obj["link"] != "")
-  		hr = "href=\""+obj["link"]+"\""  	
+		var a = ""
+		var d = ""
+  	if(obj["link"])
+			a = "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>"
+		if(obj["desc"])
+			d = "<p>"+obj["desc"]+"</p></br>"
 	document.write("<td class=\"cell\">"+
 	"<div class=\"hovereffect\">"+
 	    "<img src=\""+obj["img"]+"\" class=\"rimg\">"+
 	    "<div class=\"overlay\">"+
 	       "<h2>"+obj["name"]+"</h2>"+
-	       "<a class=\"info\""+hr+">Go to repo</a>"+
+				 d+
+	       a+
 	    "</div></div></td>")
 	if(i%3 == 0)
 	{
 	  document.write("</tr>")
-	} 
+	}
 }
