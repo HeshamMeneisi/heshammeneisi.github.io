@@ -3,6 +3,7 @@
 <head>
 <title>About me</title>
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -31,8 +32,8 @@ var iter = getProjObj()
 el = iter.next()
 var i = 0
 while(el["done"] != true)
-{  
-  obj = el["value"]      
+{
+  obj = el["value"]
   writeObj(obj)
   el = iter.next()
 }
@@ -43,11 +44,22 @@ while(el["done"] != true)
 <button class="btn" onclick="window.open('https://github.com/HeshamMeneisi')">Visit My Github Profile</button>
 </div>
 <h1 class="h1">My Resume</h1>
-<div class="ft">  
+<div class="ft">
   <button class="btn" onclick="window.open('https://docs.google.com/document/d/1KoTjszYVwItJh0QmW_lMn8feMH_nrzGcTCdsEnkXhLc/pub')">View</button>
   <br /><br />
   <button class="btn" onclick="window.open('https://docs.google.com/document/export?format=pdf&id=1KoTjszYVwItJh0QmW_lMn8feMH_nrzGcTCdsEnkXhLc')">Download</button>
 </div>
+<h1 class="h1">Contact</h1>
+<div class="p1"><p>
+  Feel free to contact me through my mail
+</p>
+<p>
+  <a href="mailto:heshammeneisi@gmail.com" id="mail">heshammeneisi@gmail.com</a>
+</p></div>
+<footer>
+  <div class="ft">
+  </div>
+</footer>
 </div>
 </body>
 </html>

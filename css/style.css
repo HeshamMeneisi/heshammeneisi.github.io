@@ -5,11 +5,11 @@
 
 html, body {
     size: 100% 100%;
-    margin: 0;    
+    margin: 0;
 }
 
 body
-{ 		
+{
 	background-image: url(../images/bg.png);
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -18,19 +18,19 @@ body
 }
 
 .tpargh
-{	
+{
 	margin: 0;
 	padding-top: 30vh;
 	font-size: 25vh;
 	color: white;
-	text-align: center;	
-	height: 70vh; 
+	text-align: center;
+	height: 70vh;
 	text-shadow: 0.5vh 0.5vh #000;
 }
 
 .cont
 {
-	max-width: 100%;	
+	max-width: 100%;
 	margin: 0;
 	overflow: hidden;
 }
@@ -40,25 +40,37 @@ body
 .ft
 {
 	margin: 0;
-  padding: 1%;
-	text-align: center;		
-	width: 100%;	
+	padding: 1%;
+	text-align: center;
+	width: 100%;
   box-shadow: 0 0 8px #000;
 }
 
 .h1
-{	
+{
 	font-size: 10vh;
 	background:  lightgray;
-	color: black;	  
+	color: black;
 }
 
 .p1
-{	
-	font-size: 5vh;		
+{
+	font-size: 5vh;
+	padding: 5px;
 	color: white;
 	text-shadow: 0.1vh 0.1vh;
 	background: rgb(40,160,240);
+}
+
+#mail
+{
+	color: rgb(230,230,230);
+	-webkit-transition: all 0.4s ease-in-out;
+}
+
+#mail:hover
+{
+	color: white;
 }
 
 .ft
@@ -67,7 +79,7 @@ body
   overflow: auto;
 }
 
-.btn {  
+.btn {
   background: #ffffff;
   background-image: -webkit-linear-gradient(top, #ffffff, #d9d9d9);
   background-image: -moz-linear-gradient(top, #ffffff, #d9d9d9);
@@ -98,7 +110,7 @@ body
 }
 
 .ptb
-{		
+{
 	margin: 0;
 	width: 100%;
 	overflow: auto;
@@ -108,16 +120,16 @@ body
 
 .cell
 {
-	display: table-cell;	
-	width:  32%;		
-	height: 30vw;	
-	padding: 2%;	  
+	display: table-cell;
+	width:  32%;
+	height: 30vw;
+	padding: 2%;
 }
 
 .rimg
-{	
+{
 	width: 100%;
-	height: 100%;  
+	height: 100%;
 }
 
 .hovereffect {
@@ -127,7 +139,7 @@ body
   overflow: hidden;
   position: relative;
   text-align: center;
-  cursor: default;    
+  cursor: default;
   box-shadow: 0 0 5px #000;
 }
 
@@ -148,7 +160,7 @@ body
 }
 
 .hovereffect:hover .overlay {
-  background-color: rgba(48, 152, 157, 0.4);  
+  background-color: rgba(48, 152, 157, 0.4);
 }
 
 .hovereffect img {
@@ -177,7 +189,7 @@ body
   transform: translateY(5px);
 }
 
-.hovereffect a.info {	
+.hovereffect a.info {
   display: inline-block;
   text-decoration: none;
   padding: 4% 4%;
@@ -193,7 +205,7 @@ body
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-weight: normal;
-  
+
 }
 
 .hovereffect:hover a.info {
