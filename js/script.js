@@ -10,26 +10,28 @@ var projects =
 ["Subtitle Editor", "", "A subtitle file editor."]
 ];
 
-function* getProjObj(){
+function getProjObj(){
+	var objlist = [];
 	for (var i = 0;i<projects.length;i++)
 	{
-		p = projects[i][0]
-		yield {name : p,img:"images/"+ p.toLowerCase().replace(" ","")+".png",link:projects[i][1], desc:projects[i][2]}
+		p = projects[i][0];
+		objlist.push({name : p,img:"images/"+ p.toLowerCase().replace(" ","")+".png",link:projects[i][1], desc:projects[i][2]});
 	}
+	return objlist;
 }
 
-function writeObj(obj){
+function writeObj(obj, i){
 	if(i%3 == 0)
   	{
-    	document.write("<tr>")
+    	document.write("<tr>");
   	}
-  	i++
-		var a = ""
-		var d = ""
+  	i++;
+		var a = "";
+		var d = "";
   	if(obj["link"])
-			a = "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>"
+			a = "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>";
 		if(obj["desc"])
-			d = "<p>"+obj["desc"]+"</p></br>"
+			d = "<p>"+obj["desc"]+"</p></br>";
 	document.write("<td class=\"cell\">"+
 	"<div class=\"hovereffect\">"+
 	    "<img src=\""+obj["img"]+"\" class=\"rimg\">"+
@@ -37,9 +39,9 @@ function writeObj(obj){
 	       "<h2>"+obj["name"]+"</h2>"+
 				 d+
 	       a+
-	    "</div></div></td>")
+	    "</div></div></td>");
 	if(i%3 == 0)
 	{
-	  document.write("</tr>")
+	  document.write("</tr>");
 	}
 }

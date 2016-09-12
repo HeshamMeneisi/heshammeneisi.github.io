@@ -25,21 +25,15 @@ Hello
   This is some of my work
 </h1>
 
-<div class="ptb">
-<table cellspacing="0" cellpadding="0">
+<table id="pftable">
 <script>
-var iter = getProjObj()
-el = iter.next()
-var i = 0
-while(el["done"] != true)
+var list = getProjObj();
+for(var i =0;i < list.length; i++)
 {
-  obj = el["value"]
-  writeObj(obj)
-  el = iter.next()
+  writeObj(list[i], i);
 }
 </script>
 </table>
-</div>
 <div class="ft">
 <button class="btn" onclick="window.open('https://github.com/HeshamMeneisi')">Visit My Github Profile</button>
 </div>
