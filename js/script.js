@@ -29,7 +29,7 @@ function writeObj(obj, i){
 		var a = "";
 		var d = "";
   	if(obj["link"])
-			a = "<a class=\"info\" href=\""+obj["link"]+"\">Go to repo</a>";
+			a = "<a class=\"info\" href=\""+obj["link"]+"\">Learn More</a>";
 		if(obj["desc"])
 			d = "<p>"+obj["desc"]+"</p></br>";
 	document.write("<td class=\"cell\">"+
