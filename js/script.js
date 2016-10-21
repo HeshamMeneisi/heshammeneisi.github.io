@@ -6,8 +6,8 @@ var projects =
 ["Inlumino","https://github.com/HeshamMeneisi/Inlumino", "A cross-platform puzzle game."],
 ["Splash","https://github.com/emam95/Splash", "A graphics design stub project in java."],
 ["Sylla", "", "A custom math script in C++."],
-["WIS", "", "An input recorder and simulator for windows."],
-["Subtitle Editor", "", "A subtitle file editor."]
+["WIS", "https://github.com/HeshamMeneisi/WIS", "An input recorder and simulator for windows."],
+["Subtitle Editor", "https://github.com/HeshamMeneisi/Subtitle-Editor", "A subtitle file editor."]
 ];
 
 function getProjObj(){
