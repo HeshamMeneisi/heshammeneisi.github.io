@@ -1,10 +1,12 @@
 var projects =
 [
-["Shannon","https://github.com/HeshamMeneisi/Shannon", "A mason SFG design and analysis tool."],
-["Lone Wolf","https://github.com/HeshamMeneisi/Lone-Wolf", "A puzzle/adventure game in XNA."],
-["ASMSharp","https://github.com/HeshamMeneisi/ASMSharp", "A highly customizable assembly IDE."],
-["Inlumino","https://github.com/HeshamMeneisi/Inlumino", "A cross-platform puzzle game."],
-["Splash","https://github.com/emam95/Splash", "A graphics design stub project in java."],
+["Anna", "https://github.com/HeshamMeneisi/AnnaPacman", "An AI that plays Pacman using a DQN."],
+["Hallo", "https://github.com/HeshamMeneisi/Hallo", "A minimalist social network."],
+["Shannon", "https://github.com/HeshamMeneisi/Shannon", "A mason SFG design and analysis tool."],
+["Lone Wolf", "https://github.com/HeshamMeneisi/Lone-Wolf", "A puzzle/adventure game in XNA."],
+["ASMSharp", "https://github.com/HeshamMeneisi/ASMSharp", "A highly customizable assembly IDE."],
+["Inlumino", "https://github.com/HeshamMeneisi/Inlumino", "A cross-platform puzzle game."],
+["Splash", "https://github.com/emam95/Splash", "A graphics design stub project in java."],
 ["Sylla", "", "A custom math script in C++."],
 ["WIS", "https://github.com/HeshamMeneisi/WIS", "An input recorder and simulator for windows."],
 ["Subtitle Editor", "https://github.com/HeshamMeneisi/Subtitle-Editor", "A subtitle file editor."]
