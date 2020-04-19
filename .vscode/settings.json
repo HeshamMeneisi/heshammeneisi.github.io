@@ -3,5 +3,15 @@
         "activityBar.background": "#424242",
         "titleBar.activeBackground": "#424242",
         "titleBar.activeForeground": "#424242"
+    },
+    "files.associations": {
+        "*.ts": "typescript",
+        "*.tsx": "typescriptreact"
+    },
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
     }
 }
