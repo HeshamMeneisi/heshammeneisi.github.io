@@ -30,12 +30,12 @@ const sections: ITechSection[] = [
     items: [
       { name: 'Python', icon: 'python', color: '#F9E668' },
       { name: 'R', icon: 'r', color: '#276DC3' },
-      { name: 'Kears', icon: 'keras', color: '#D00000' },
-      { name: 'TensorFlow', icon: 'tensorflow', color: '#FF6F00' },
+      { name: 'Keras', icon: 'keras', color: '#D00000' },
+      { name: 'Tensor-Flow', icon: 'tensorflow', color: '#FF6F00' },
       { name: 'Pandas', icon: 'pandora', color: '#224099' },
       { name: 'NLTK', icon: 'nintendo', color: '#aaa' },
       { name: 'InfluxDB', icon: 'influxdb', color: '#22ADF6' },
-      { name: 'Spark', icon: 'apachespark', color: '#E25A1C' },
+      { name: 'Spark', icon: 'apachespark', color: '#E25A1C' }
     ],
   },
   {
@@ -50,7 +50,6 @@ const sections: ITechSection[] = [
       { name: 'Travis', icon: 'travisci', color: '#3EAAAF' },
       { name: 'AWS', icon: 'amazonaws', color: '#EC902D' },
       { name: 'Git', icon: 'git', color: '#E94E31' },
-      { name: 'ESLint', icon: 'eslint', color: '#4B32C3' },
       { name: 'Kibana', icon: 'kibana', color: '#E9478A' },
       { name: 'Slack Integ.', icon: 'slack', color: '#fcc' },
       { name: 'Grafana', icon: 'grafana', color: '#F46800' },
@@ -69,18 +68,25 @@ const sections: ITechSection[] = [
       { name: 'Lumen', icon: 'lumen', color: '#E74430' },
       { name: 'Python', icon: 'python', color: '#F9E668' },
       { name: 'Flask', icon: 'flask', color: '#fff' },
+      { name: 'MySql', icon: 'mysql', color: '#4479A1' },
+      { name: 'Postgre-SQL', icon: 'postgresql', color: '#336791' },
+      { name: 'Mongo', icon: 'mongodb', color: '#47A248' }
     ],
   },
   {
     title: 'Frontend',
     text: 'I have solid frontend experience in UI and UX design.',
     items: [
+      { name: 'JavaScript', icon: 'javascript', color: '#F7DF1E' },
+      { name: 'TypeScript', icon: 'typescript', color: '#007ACC' },
       { name: 'Vue', icon: 'vue-dot-js', color: '#4FC08D' },
       { name: 'Vuetify', icon: 'vuetify', color: '#2a79D0' },
       { name: 'React', icon: 'react', color: '#61DAFB' },
       { name: 'Redux', icon: 'redux', color: '#764ABC' },
       { name: 'Material-UI', icon: 'material-ui', color: '#0081CB' },
       { name: 'Semantic-UI', icon: 'slides', color: '#888' },
+      { name: 'Jest', icon: 'jest', color: '#C21325' },
+      { name: 'ESLint', icon: 'eslint', color: '#4B32C3' }
     ],
   },
 ];
