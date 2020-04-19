@@ -1,5 +1,13 @@
 import React from 'react';
-import { Card, CommentText, Container, Divider, Grid, Header, Icon, LabelDetail, Segment } from 'semantic-ui-react';
+import {
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  LabelDetail,
+  Segment,
+} from 'semantic-ui-react';
 import HeaderSubHeader from 'semantic-ui-react/dist/commonjs/elements/Header/HeaderSubheader';
 import SvgIcon from '../SvgIcon';
 
@@ -26,13 +34,14 @@ const sections: ITechSection[] = [
       { name: 'TensorFlow', icon: 'tensorflow', color: '#FF6F00' },
       { name: 'Pandas', icon: 'pandora', color: '#224099' },
       { name: 'NLTK', icon: 'nintendo', color: '#aaa' },
-      { name: 'InfluxDB', icon: 'influxdb', color:'#22ADF6'},
-      { name: 'Spark', icon: 'apachespark', color: '#E25A1C'}
-    ]
+      { name: 'InfluxDB', icon: 'influxdb', color: '#22ADF6' },
+      { name: 'Spark', icon: 'apachespark', color: '#E25A1C' },
+    ],
   },
   {
     title: 'DevOps',
-    text: 'I can take an application through all the CI/CD stages. ' +
+    text:
+      'I can take an application through all the CI/CD stages. ' +
       'Automated building, testing, release, deployment, metrics, and logs.',
     items: [
       { name: 'Docker', icon: 'docker', color: '#3A8DCB' },
@@ -45,21 +54,22 @@ const sections: ITechSection[] = [
       { name: 'Kibana', icon: 'kibana', color: '#E9478A' },
       { name: 'Slack Integ.', icon: 'slack', color: '#fcc' },
       { name: 'Grafana', icon: 'grafana', color: '#F46800' },
-      { name: 'Azure', icon: 'azurepipelines', color: '#2560E0'}
-    ]
+      { name: 'Azure', icon: 'azurepipelines', color: '#2560E0' },
+    ],
   },
   {
     title: 'Backend',
-    text: 'I was contracted to do various types of APIs. ML, web, mobile, and auto-scrapers.',
+    text:
+      'I was contracted to do various types of APIs. ML, web, mobile, and auto-scrapers.',
     items: [
       { name: 'C#', icon: 'csharp', color: '#34a231' },
       { name: 'SDK', icon: 'dot-net', color: '#5C2D91' },
       { name: 'PHP', icon: 'php', color: '#777BB4' },
       { name: 'Laravel', icon: 'laravel', color: '#FF2D20' },
-      { name: 'Lumen', icon: 'lumen', color:'#E74430'},
+      { name: 'Lumen', icon: 'lumen', color: '#E74430' },
       { name: 'Python', icon: 'python', color: '#F9E668' },
-      { name: 'Flask', icon: 'flask', color: '#fff' }
-    ]
+      { name: 'Flask', icon: 'flask', color: '#fff' },
+    ],
   },
   {
     title: 'Frontend',
@@ -70,9 +80,9 @@ const sections: ITechSection[] = [
       { name: 'React', icon: 'react', color: '#61DAFB' },
       { name: 'Redux', icon: 'redux', color: '#764ABC' },
       { name: 'Material-UI', icon: 'material-ui', color: '#0081CB' },
-      { name: 'Semantic-UI', icon: 'slides', color:'#888'}
-    ]
-  }
+      { name: 'Semantic-UI', icon: 'slides', color: '#888' },
+    ],
+  },
 ];
 
 function renderItem(item: ITechItem, idx: number) {
@@ -89,9 +99,7 @@ function renderItem(item: ITechItem, idx: number) {
 function renderSection(section: ITechSection, idx: number) {
   return (
     <Container text key={idx}>
-      <HeaderSubHeader>
-        {section.title}
-      </HeaderSubHeader>
+      <HeaderSubHeader>{section.title}</HeaderSubHeader>
       <Divider fitted inverted />
       <Container
         text
@@ -99,16 +107,14 @@ function renderSection(section: ITechSection, idx: number) {
       >
         {section.text}
       </Container>
-      <Grid padded columns='6' doubling>
-        <Grid.Row>
-          {section.items.map(renderItem)}
-        </Grid.Row>
+      <Grid padded columns="6" doubling>
+        <Grid.Row>{section.items.map(renderItem)}</Grid.Row>
       </Grid>
     </Container>
   );
 }
 
-function TechSkillsSection(){
+function TechSkillsSection() {
   return (
     <Segment inverted padded>
       <Header>
@@ -117,8 +123,9 @@ function TechSkillsSection(){
       </Header>
       <Divider />
       <Container text>
-        During my past projects and consultancy positions,
-        I mastered the following technologies to varying but all professionally competent degrees.
+        During my past projects and consultancy positions, I mastered the
+        following technologies to varying but all professionally competent
+        degrees.
       </Container>
       <Divider hidden />
       {sections.map(renderSection)}

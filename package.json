@@ -50,6 +50,7 @@
     "commit": "sgc",
     "commit:all": "git add . && sgc",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
   },
   "sgc": {
