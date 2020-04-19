@@ -13,6 +13,11 @@ class SemanticReleaseError extends Error {
 }
 
 module.exports = {
+  plugins:[
+    ["@semantic-release/exec", {
+      "successCmd": "yarn run deploy"
+    }],
+  ],
   verifyConditions: [
     () => {
       if (!process.env.GH_TOKEN) {
