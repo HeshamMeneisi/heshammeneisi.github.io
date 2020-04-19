@@ -1,0 +1,61 @@
+name: Build-Test-Release
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  SERVICE_NAME: frontend-vanda
+
+jobs:
+  test-and-build:
+
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: test
+
+      - name: Pack
+        run: tar -czf dist.tar.gz build/
+
+      - name: Upload distribution artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist.tar.gz
+
+  release:
+    env:
+      DIST_ZIP_PATH: ''
+    needs: [ test-and-build ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Download distribution artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: dist
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          DIST_TAR_PATH: dist/dist.tar.gz
+        with:
+          extra_plugins: |
+            @semantic-release/git@7.0.18
+            @semantic-release/exec@3.3.8
+            @semantic-release/changelog@3.0.0
