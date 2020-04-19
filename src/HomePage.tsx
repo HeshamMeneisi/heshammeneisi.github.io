@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Divider, Grid, GridColumn, GridRow, Segment} from 'semantic-ui-react';
+import { Divider, Grid, GridColumn, GridRow } from 'semantic-ui-react';
 import AboutSection from './components/home/AboutSection';
 import TechSkillsSection from './components/home/TechSkillsSection';
 
