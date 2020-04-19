@@ -15,6 +15,7 @@
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
+    "simple-icons": "^2.9.0",
     "typescript": "~3.7.2"
   },
   "devDependencies": {
