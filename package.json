@@ -53,7 +53,8 @@
   },
   "sgc": {
     "scope": true,
-    "lowercaseTypes": true
+    "lowercaseTypes": true,
+    "addScopeSpace": false
   },
   "eslintConfig": {
     "extends": "react-app"

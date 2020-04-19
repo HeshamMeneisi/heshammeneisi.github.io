@@ -24,7 +24,6 @@
     ],
     "max-len": "warn",
     "react/jsx-key": "error",
-    "react/jsx-one-expression-per-line": "off",
     "no-param-reassign": [
       "error",
       {
