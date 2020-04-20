@@ -13,10 +13,10 @@ class SemanticReleaseError extends Error {
 }
 
 module.exports = {
-  plugins:[
-    ["@semantic-release/exec", {
-      "successCmd": "yarn run deploy"
-    }],
+  "plugins": [
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/git"
   ],
   verifyConditions: [
     () => {
@@ -24,7 +24,7 @@ module.exports = {
         throw new SemanticReleaseError(
           'No GH_TOKEN specified',
           'ENOGH_TOKEN',
-          'Please make sure to github token in `GH_TOKEN` environment variable on your CI environment. The token must be able to create releases')
+          'Please make sure to include github token in `GH_TOKEN` environment variable on your CI environment. The token must be able to create releases')
       }
     },
     '@semantic-release/github',
@@ -40,5 +40,13 @@ module.exports = {
         ],
       },
     ],
+    [
+      "@qiwi/semantic-release-gh-pages-plugin",
+      {
+        "src": "build",
+        "msg": "updated",
+        "branch": "master"
+      }
+    ]
   ],
 }

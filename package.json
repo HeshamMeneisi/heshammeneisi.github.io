@@ -55,7 +55,7 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b master"
   },
   "sgc": {
     "scope": true,

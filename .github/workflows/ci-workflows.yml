@@ -55,7 +55,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           DIST_TAR_PATH: dist/dist.tar.gz
         with:
+          branch: codebase
           extra_plugins: |
+            @semantic-release/release-notes-generator@9.0.1
+            @semantic-release/changelog@5.0.1
             @semantic-release/git@7.0.18
-            @semantic-release/exec@3.3.8
-            @semantic-release/changelog@3.0.0
+            @qiwi/semantic-release-gh-pages-plugin
