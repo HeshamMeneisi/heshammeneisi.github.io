@@ -40,10 +40,14 @@ module.exports = {
         ],
       },
     ],
+    {
+      path: "@semantic-release/exec",
+      cmd: `tar -xzvf ${distZipPath}`
+    },
     [
       "@qiwi/semantic-release-gh-pages-plugin",
       {
-        "src": "build",
+        "src": "dist",
         "msg": "updated",
         "branch": "master"
       }
