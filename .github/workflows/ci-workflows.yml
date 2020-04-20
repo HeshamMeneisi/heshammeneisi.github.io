@@ -3,7 +3,7 @@ name: Build-Test-Release
 on:
   push:
     branches:
-      - master
+      - codebase
 
 env:
   SERVICE_NAME: frontend-vanda
