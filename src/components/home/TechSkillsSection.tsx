@@ -70,7 +70,8 @@ const sections: ITechSection[] = [
       { name: 'Flask', icon: 'flask', color: '#fff' },
       { name: 'MySql', icon: 'mysql', color: '#4479A1' },
       { name: 'Postgre-SQL', icon: 'postgresql', color: '#336791' },
-      { name: 'Mongo', icon: 'mongodb', color: '#47A248' }
+      { name: 'Mongo', icon: 'mongodb', color: '#47A248' },
+      { name: 'OpenAPI', icon: 'openapiinitiative', color: '#6BA539' }
     ],
   },
   {
@@ -89,6 +90,14 @@ const sections: ITechSection[] = [
       { name: 'ESLint', icon: 'eslint', color: '#4B32C3' }
     ],
   },
+  {
+    title: 'Other',
+    text: 'A a Computer & Communication Engineer, I participated in some' +
+          ' projects involving robotics, micro-controllers, and signal processing.',
+    items: [
+      // { name: 'ESLint', icon: 'eslint', color: '#4B32C3' }
+    ]
+  }
 ];
 
 function renderItem(item: ITechItem, idx: number) {

@@ -31,3 +31,9 @@ test('renders frontend subsection', () => {
   const t = getByText(/UI and UX/i);
   expect(t).toBeInTheDocument();
 });
+
+test('renders other subsection', () => {
+  const { getByText } = render(<TechSkillsSection />);
+  const t = getByText(/Other/i);
+  expect(t).toBeInTheDocument();
+});
