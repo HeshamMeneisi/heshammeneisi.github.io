@@ -47,7 +47,7 @@ module.exports = {
     [
       "@qiwi/semantic-release-gh-pages-plugin",
       {
-        "src": "dist",
+        "src": "build",
         "msg": "updated",
         "branch": "master"
       }
