@@ -51,6 +51,7 @@ const sections: ITechSection[] = [
       { name: 'AWS', icon: 'amazonaws', color: '#EC902D' },
       { name: 'Git', icon: 'git', color: '#E94E31' },
       { name: 'Kibana', icon: 'kibana', color: '#E9478A' },
+      { name: 'Elasticsearch', icon: 'elasticsearch', color: '#DBB719' },
       { name: 'Slack Integ.', icon: 'slack', color: '#fcc' },
       { name: 'Grafana', icon: 'grafana', color: '#F46800' },
       { name: 'Azure', icon: 'azurepipelines', color: '#2560E0' },
