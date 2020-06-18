@@ -9,9 +9,7 @@ function App() {
   return (
     <Container>
       <HomePage />
-      <Grid style={{ position: 'fixed', margin: '1em', bottom: '0px', left: '0px',
-        animation: 'hover 3s ease-in-out infinite', zIndex: 6 }}
-      >
+      <Grid style={{ position: 'fixed', margin: '1em', bottom: '0px', left: '0px', zIndex: 6 }}>
         <Popup
           content='Github'
           size="mini"
@@ -19,6 +17,7 @@ function App() {
           position="top center"
           trigger={(
             <Button
+              style={{ animation: 'hover 3s ease-in-out infinite' }}
               icon
               size="tiny"
               onClick={() => window.open('https://github.com/heshammeneisi')}
@@ -34,12 +33,30 @@ function App() {
           position="top center"
           trigger={(
             <Button
+              style={{ animation: 'hover 3s ease-in-out infinite', animationDelay: '1s' }}
               color="green"
               icon
               size="tiny"
               onClick={() => window.open('https://www.upwork.com/freelancers/~01c73274b9b99e8be7')}
             >
               <SvgIcon name="upwork" light />
+            </Button>
+          )}
+        />
+        <Popup
+          content='LinkedIn'
+          size="mini"
+          inverted
+          position="top center"
+          trigger={(
+            <Button
+              style={{ animation: 'hover 3s ease-in-out infinite', animationDelay: '0.5s' }}
+              color="blue"
+              icon
+              size="tiny"
+              onClick={() => window.open('https://www.linkedin.com/in/hesham-meneisi')}
+            >
+              <SvgIcon name="linkedin" light />
             </Button>
           )}
         />

@@ -1,4 +1,6 @@
 import React from 'react';
+import TrackVisibility from 'react-on-screen';
+
 import {
   Container,
   Divider,
@@ -94,7 +96,7 @@ const sections: ITechSection[] = [
   {
     title: 'Other',
     text: 'A a Computer & Communication Engineer, I participated in some' +
-          ' projects involving robotics, micro-controllers, and signal processing.',
+      ' projects involving robotics, micro-controllers, and signal processing.',
     items: [
       // { name: 'ESLint', icon: 'eslint', color: '#4B32C3' }
     ]
@@ -104,10 +106,26 @@ const sections: ITechSection[] = [
 function renderItem(item: ITechItem, idx: number) {
   return (
     <Grid.Column key={idx}>
-      <Segment color="black" inverted padded textAlign="center">
-        <SvgIcon color={item.color} name={item.icon} light size="big" />
-        <LabelDetail style={{ paddingTop: '10px' }}>{item.name}</LabelDetail>
-      </Segment>
+      <TrackVisibility once>
+        {({ isVisible }) => (
+          <Segment
+            inverted
+            padded
+            textAlign="center"
+            vertical
+            style={{
+              backgroundColor: 'transparent',
+              opacity: 0,
+              left: `${100 + idx * 10}px`,
+              animation: isVisible ? `slide ${2 + idx * 0.07}s forwards, fadeIn 2s forwards` : '',
+              animationDelay: '0.2s'
+            }}
+          >
+            <SvgIcon color={item.color} name={item.icon} light size="big" />
+            <LabelDetail style={{ paddingTop: '10px' }}>{item.name}</LabelDetail>
+          </Segment>
+        )}
+      </TrackVisibility>
     </Grid.Column>
   );
 }
@@ -132,14 +150,27 @@ function renderSection(section: ITechSection, idx: number) {
 
 function TechSkillsSection() {
   return (
-    <Segment inverted padded>
+    <Segment inverted padded style={{ overflow: 'hidden' }}>
       <Header>
-        <Icon name="code" color="green" />
-        Tech Skills
+        <TrackVisibility once>
+          {({ isVisible }) => (
+            <Container style={{ opacity: 0,
+              animation: isVisible ? 'slideInX 1s forwards, fadeIn 0.5s forwards' : '',
+              animationDelay: isVisible ? '0.5s' : '' }}
+            >
+              <Icon
+                name="code"
+                color="green"
+                style={{ animation: isVisible ? 'jiggle 2s' : '' }}
+              />
+              Tech Skills
+            </Container>
+          ) }
+        </TrackVisibility>
       </Header>
       <Divider />
       <Container text>
-        During my past projects and consultancy positions, I mastered the
+        During my past projects, full-time, and consultancy positions, I mastered the
         following technologies to varying but all professionally competent
         degrees.
       </Container>

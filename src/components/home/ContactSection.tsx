@@ -6,14 +6,30 @@ import {
   Icon,
   Segment,
 } from 'semantic-ui-react';
+import TrackVisibility from 'react-on-screen';
 import SvgIcon from '../SvgIcon';
 
 function ContactSection() {
   return (
     <Segment inverted padded>
       <Header>
-        <Icon name="paper plane" flipped="horizontally" color="green" />
-        Contact
+        <TrackVisibility once>
+          {({ isVisible }) => (
+            <Container style={{ opacity: 0,
+              animation: isVisible ? 'slideInX 1s forwards, fadeIn 0.5s forwards' : '',
+              animationDelay: isVisible ? '0.2s' : '' }}
+            >
+              <Icon
+                name="paper plane"
+                color="green"
+                style={{
+                  animation: isVisible ? 'jiggle 2s' : ''
+                }}
+              />
+              Contact
+            </Container>
+          ) }
+        </TrackVisibility>
       </Header>
       <Divider />
       <Container text>
@@ -24,12 +40,26 @@ function ContactSection() {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <SvgIcon name="gmail" color="#D14836" />
-              <a style={{ color: 'white' }} href="mailto:heshammeneisi@gmail.com">heshammeneisi@gmail.com</a>
+              <TrackVisibility once>
+                {({ isVisible }) => (
+                  <Container style={{ opacity: 0, animation: isVisible ? 'flyIn 1s forwards' : '' }}>
+                    <SvgIcon name="gmail" color="#D14836" />
+                    <a style={{ color: 'white' }} href="mailto:heshammeneisi@gmail.com">heshammeneisi@gmail.com</a>
+                  </Container>
+                )}
+              </TrackVisibility>
             </Grid.Column>
             <Grid.Column>
-              <SvgIcon name="skype" color="#00AFF0" />
-              heshammeneisi
+              <TrackVisibility once>
+                {({ isVisible }) => (
+                  <Container style={{ opacity: 0, animation: isVisible ? 'flyIn 1s forwards' : '',
+                    animationDelay: isVisible ? '0.5s' : '' }}
+                  >
+                    <SvgIcon name="skype" color="#00AFF0" />
+                    heshammeneisi
+                  </Container>
+                )}
+              </TrackVisibility>
             </Grid.Column>
           </Grid.Row>
         </Grid>

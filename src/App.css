@@ -7,3 +7,26 @@ hover {
   0% { transform: translateY(0); }
   50% { transform: translateY(-0.15em); }
 }
+
+@keyframes
+grow {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% {transform: scale(1)}
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+/*@keyframes  {*/
+/*  100% { left: 0; }*/
+/*}*/
