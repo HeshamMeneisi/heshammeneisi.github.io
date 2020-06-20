@@ -92,7 +92,7 @@ function Floaters() {
           frameBorder={0}
           allowFullScreen
           scrolling="test"
-          src="https://docs.google.com/document/d/e/2PACX-1vTCcFhTHHdNQEeDNrJn7odf4kK2CoXXaS1OOs9gi_0KDfcQn3ZS_CjmdGI9bmMrxX5iZpAb2jePhf-a/pub?embedded=true"
+          src="https://drive.google.com/file/d/1YKqTZlgspyoYpE0i_Svxwz477tu5RAfl/preview"
         />
       </Modal>
     </Grid>
