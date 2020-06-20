@@ -33,12 +33,12 @@ function ContactSection() {
       </Header>
       <Divider />
       <Container text>
-        <Grid columns="equal">
+        <Grid stackable columns="equal">
           <Grid.Row>
             You can contact me directly through my email (preferred method) or send me a message.
             You might also contact me on Upwork, although I prefer direct contact.
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row centered>
             <Grid.Column>
               <TrackVisibility once>
                 {({ isVisible }) => (
