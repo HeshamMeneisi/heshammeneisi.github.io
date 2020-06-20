@@ -89,10 +89,9 @@ function Floaters() {
         <iframe
           title="Resume"
           width="100%"
-          height="100%"
+          height="94%"
           frameBorder={0}
           allowFullScreen
-          scrolling="test"
           src="https://drive.google.com/file/d/1YKqTZlgspyoYpE0i_Svxwz477tu5RAfl/preview"
         />
       </Modal>
