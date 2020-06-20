@@ -83,6 +83,7 @@ function Floaters() {
         open={dialog}
         onClose={() => setDialog(false)}
         style={{ height: '80%', animation: 'scaleIn 1s' }}
+        closeIcon="close"
       >
         <Modal.Header>My Resume</Modal.Header>
         <iframe

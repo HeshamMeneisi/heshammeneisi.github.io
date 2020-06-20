@@ -6,7 +6,7 @@ import ContactSection from './components/home/ContactSection';
 
 function HomePage() {
   return (
-    <Container style={{ paddingBottom: '32px' }}>
+    <Container style={{ paddingBottom: '80px' }}>
       <Grid>
         <Divider section hidden />
         <GridRow>
