@@ -8,7 +8,7 @@ function Footer() {
     if(window.location.search.indexOf('legal') > -1){
       setDialog(true);
     }
-  });
+  }, []);
   return (
     <Container
       textAlign="right"
