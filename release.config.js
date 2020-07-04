@@ -14,8 +14,6 @@ class SemanticReleaseError extends Error {
 
 module.exports = {
   "plugins": [
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
     "@semantic-release/git"
   ],
   verifyConditions: [
