@@ -5,9 +5,6 @@ on:
     branches:
       - codebase
 
-env:
-  SERVICE_NAME: frontend-vanda
-
 jobs:
   test-and-build:
 
@@ -39,8 +36,6 @@ jobs:
           path: dist.tar.gz
 
   release:
-    env:
-      DIST_ZIP_PATH: ''
     needs: [ test-and-build ]
     runs-on: ubuntu-latest
     steps:
@@ -57,8 +52,6 @@ jobs:
         with:
           branch: codebase
           extra_plugins: |
-            @semantic-release/release-notes-generator@9.0.1
-            @semantic-release/changelog@5.0.1
             @semantic-release/git@7.0.18
             @semantic-release/exec@5.0.0
             @qiwi/semantic-release-gh-pages-plugin@1.16.0-rc.1
