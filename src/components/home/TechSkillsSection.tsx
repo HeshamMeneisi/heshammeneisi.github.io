@@ -118,7 +118,7 @@ function renderItem(item: ITechItem, idx: number) {
               opacity: 0,
               left: `${100 + idx * 10}px`,
               animation: isVisible ? `slide ${2 + idx * 0.07}s forwards, fadeIn 2s forwards` : '',
-              animationDelay: '0.2s'
+              animationDelay: isVisible ? '0.2s' : ''
             }}
           >
             <SvgIcon color={item.color} name={item.icon} light size="big" />
