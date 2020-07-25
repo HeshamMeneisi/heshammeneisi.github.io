@@ -27,6 +27,6 @@ grow {
   100% { left: 0; }
 }
 
-/*@keyframes  {*/
-/*  100% { left: 0; }*/
-/*}*/
+@keyframes  in {
+  100% { left: 0; }
+}
