@@ -69,26 +69,25 @@ function ReviewsSection() {
   const [inTransition, setInTransition] = useState(false);
 
   useEffect(() => {
+    function next() {
+      setInTransition(true);
+      setTimeout(()=>{
+        setInTransition(false);
+        setCurrentReview((currentReview + 1) % reviews.length);
+      }, 350);
+    }
     const interval = setInterval(() => {
       next();
     }, 8000);
     return () => clearInterval(interval);
   }, [currentReview]);
 
-  function next() {
-    setInTransition(true);
-    setTimeout(()=>{
-      setInTransition(false);
-      setCurrentReview((currentReview + 1) % reviews.length);
-    }, 350);
-  }
-
   function renderReview(review: IReview, idx: number) {
     return currentReview === idx && (
 
       <Table
         key={idx}
-        style={{ maxWidth: 'min(90%, 500px)', minHeight: '300px',
+        style={{ minHeight: '300px', maxWidth: 'min(70vw, 500px)',
           animation: inTransition ? 'flyOutLeft 1s forwards' : 'flyInRight 1s forwards' }}
         inverted
         unstackable
@@ -96,14 +95,14 @@ function ReviewsSection() {
         <TableBody className="middle aligned">
           <TableRow>
             <TableCell>
-              <Container text textAlign="center" style={{ fontSize: '20px'}}>
+              <Container text textAlign="center" style={{ fontSize: '20px' }}>
                 {review.text}
               </Container>
             </TableCell>
           </TableRow>
         </TableBody>
         <TableFooter>
-          <TableRow style={{paddingRight: '10px'}}>
+          <TableRow style={{ paddingRight: '10px' }}>
             <TableCell style={{ paddingBottom: '40px' }} textAlign="right">
               {review.isFromUpwork ? (<SvgIcon name="upwork" color="#00ee00" />
               ) : `~${  review.signature}`}
@@ -116,7 +115,7 @@ function ReviewsSection() {
   }
 
   return (
-    <Segment inverted padded style={{ overflow: 'hidden' }} compact>
+    <Segment inverted padded style={{ overflow: 'hidden' }}>
       <Header>
         <TrackVisibility once>
           {({ isVisible }) => (
