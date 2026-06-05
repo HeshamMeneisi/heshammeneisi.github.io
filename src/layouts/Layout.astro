@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { withBase } from "../lib/base";
 
 interface Props {
   title: string;
@@ -29,9 +30,9 @@ const ogImage = "https://heshammeneisi.github.io/logo512.png";
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary" />
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href={withBase("/favicon.ico")} />
+    <link rel="apple-touch-icon" href={withBase("/logo192.png")} />
+    <link rel="manifest" href={withBase("/manifest.json")} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

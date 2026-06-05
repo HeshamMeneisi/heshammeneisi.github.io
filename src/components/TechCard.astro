@@ -1,0 +1,26 @@
+---
+import { getIcon } from "../lib/icons";
+
+interface Props {
+  name: string;
+  slug?: string;
+  mono?: string;
+}
+
+const { name, slug, mono } = Astro.props;
+const icon = getIcon(slug);
+const monogram = mono ?? name.replace(/[^A-Za-z0-9]/g, "").slice(0, 2);
+---
+
+<div class="tech-card" style={icon ? `--brand:#${icon.hex}` : undefined}>
+  {
+    icon ? (
+      <svg class="tech-logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d={icon.path} />
+      </svg>
+    ) : (
+      <span class="tech-mono" aria-hidden="true">{monogram}</span>
+    )
+  }
+  <span class="tech-name">{name}</span>
+</div>

@@ -1,0 +1,24 @@
+---
+import TechCard from "./TechCard.astro";
+import type { Tech } from "../data/tech";
+
+interface Props {
+  items: Tech[];
+  reverse?: boolean;
+  speed?: string;
+}
+
+const { items, reverse = false, speed = "46s" } = Astro.props;
+const label = items.map((i) => i.name).join(", ");
+---
+
+<div class="marquee" role="list" aria-label={label}>
+  <div class:list={["marquee-track", reverse && "reverse"]} style={`--speed:${speed}`}>
+    <div class="marquee-group">
+      {items.map((t) => <TechCard name={t.name} slug={t.slug} mono={t.mono} />)}
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      {items.map((t) => <TechCard name={t.name} slug={t.slug} mono={t.mono} />)}
+    </div>
+  </div>
+</div>

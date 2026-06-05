@@ -2,13 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import TechMarquee from "../components/TechMarquee.astro";
+import { stripes } from "../data/tech";
+import { withBase } from "../lib/base";
 import {
   profile,
   links,
   metrics,
   jobs,
   earlier,
-  skills,
   projects,
   education,
   languages,
@@ -24,7 +26,8 @@ const description =
 
   <main>
     <!-- HERO -->
-    <section class="mx-auto max-w-3xl px-6 pb-14 pt-20">
+    <section class="relative mx-auto max-w-3xl px-6 pb-14 pt-20">
+      <div class="glow"></div>
       <p class="reveal mb-3.5 font-mono text-sm font-semibold tracking-wide text-accent">
         {profile.eyebrow}
       </p>
@@ -37,7 +40,7 @@ const description =
       <p class="reveal mb-7 font-mono text-[15px] text-faint">{profile.location}</p>
       <div class="reveal flex flex-wrap gap-3">
         <a
-          href={profile.resume}
+          href={withBase(profile.resume)}
           target="_blank"
           rel="noopener"
           class="inline-flex items-center gap-2 rounded-[10px] border border-accent bg-accent px-[18px] py-[11px] text-[15px] font-semibold text-[#06281a] transition hover:-translate-y-0.5 hover:bg-[#4ef193]"
@@ -105,27 +108,15 @@ const description =
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="border-t border-border">
-      <div class="mx-auto max-w-3xl px-6 py-12">
-        <SectionTitle title="Technical Skills" />
-        {skills.map((group, idx) => (
-          <div
-            class:list={[
-              "reveal py-4",
-              idx > 0 && "border-t border-border",
-            ]}
-          >
-            <h4 class="mb-3 text-sm font-medium text-ink">{group.title}</h4>
-            <div class="flex flex-wrap gap-[9px]">
-              {group.items.map((item) => (
-                <span class="rounded-lg border border-border bg-bg-soft px-[11px] py-1.5 font-mono text-[13px] text-muted">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+    <!-- SKILLS / STACK -->
+    <section id="skills" class="overflow-hidden border-t border-border py-12">
+      <div class="mx-auto max-w-3xl px-6">
+        <SectionTitle title="Stack" />
+      </div>
+      <div class="mt-1 flex flex-col gap-3">
+        <TechMarquee items={stripes[0]} speed="46s" />
+        <TechMarquee items={stripes[1]} reverse speed="54s" />
+        <TechMarquee items={stripes[2]} speed="62s" />
       </div>
     </section>
 
@@ -188,10 +179,10 @@ const description =
             {l.label}
           </a>
         ))}
-        <a href={profile.resume} target="_blank" rel="noopener" class="text-accent hover:underline">Résumé</a>
+        <a href={withBase(profile.resume)} target="_blank" rel="noopener" class="text-accent hover:underline">Résumé</a>
       </div>
       <div class="font-mono">
-        © {new Date().getFullYear()} Hesham Meneisi — built with Astro &amp; Tailwind. Fast, accessible, dependency-light.
+        © {new Date().getFullYear()} Hesham Meneisi. Built with Astro and Tailwind.
       </div>
     </div>
   </footer>
