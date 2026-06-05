@@ -19,6 +19,7 @@ export interface Project {
 export interface Link {
   label: string;
   href: string;
+  icon: string;
   external?: boolean;
 }
 
@@ -35,10 +36,10 @@ export const profile = {
 };
 
 export const links: Link[] = [
-  { label: "Email", href: "mailto:heshammeneisi@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/hesham-meneisi", external: true },
-  { label: "GitHub", href: "https://github.com/HeshamMeneisi", external: true },
-  { label: "Medium", href: "https://medium.com/@heshammeneisi", external: true },
+  { label: "Email", href: "mailto:heshammeneisi@gmail.com", icon: "mail" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hesham-meneisi", icon: "linkedin", external: true },
+  { label: "GitHub", href: "https://github.com/HeshamMeneisi", icon: "github", external: true },
+  { label: "Medium", href: "https://medium.com/@heshammeneisi", icon: "pen", external: true },
 ];
 
 export const metrics: Metric[] = [
