@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import SocialIcon from "../components/SocialIcon.astro";
 import TechMarquee from "../components/TechMarquee.astro";
 import { stripes } from "../data/tech";
 import { withBase } from "../lib/base";
@@ -45,6 +46,7 @@ const description =
           rel="noopener"
           class="inline-flex items-center gap-2 rounded-[10px] border border-accent bg-accent px-[18px] py-[11px] text-[15px] font-semibold text-[#06281a] transition hover:-translate-y-0.5 hover:bg-[#4ef193]"
         >
+          <SocialIcon name="file" class="size-[18px]" />
           View Résumé (PDF)
         </a>
         {links.map((l) => (
@@ -54,6 +56,7 @@ const description =
             rel={l.external ? "noopener" : undefined}
             class="inline-flex items-center gap-2 rounded-[10px] border border-border bg-card px-[18px] py-[11px] text-[15px] font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent-dim"
           >
+            <SocialIcon name={l.icon} class="size-[18px] text-muted" />
             {l.label}
           </a>
         ))}
@@ -64,14 +67,26 @@ const description =
     <section id="impact" class="border-t border-border">
       <div class="mx-auto max-w-3xl px-6 py-12">
         <SectionTitle title="Impact" />
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
           {metrics.map((m) => (
             <div class="reveal rounded-[14px] border border-border bg-card px-[18px] py-5">
-              <div class="text-[28px] font-extrabold tracking-tight text-accent">{m.num}</div>
+              <div class="whitespace-nowrap text-[22px] font-extrabold tracking-tight text-accent sm:text-[28px]">{m.num}</div>
               <div class="mt-1 text-[13.5px] text-muted">{m.label}</div>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / STACK -->
+    <section id="skills" class="overflow-hidden border-t border-border py-12">
+      <div class="mx-auto max-w-3xl px-6">
+        <SectionTitle title="Stack" />
+      </div>
+      <div class="mt-1 flex flex-col gap-3">
+        <TechMarquee items={stripes[0]} speed="46s" />
+        <TechMarquee items={stripes[1]} reverse speed="54s" />
+        <TechMarquee items={stripes[2]} speed="62s" />
       </div>
     </section>
 
@@ -108,23 +123,11 @@ const description =
       </div>
     </section>
 
-    <!-- SKILLS / STACK -->
-    <section id="skills" class="overflow-hidden border-t border-border py-12">
-      <div class="mx-auto max-w-3xl px-6">
-        <SectionTitle title="Stack" />
-      </div>
-      <div class="mt-1 flex flex-col gap-3">
-        <TechMarquee items={stripes[0]} speed="46s" />
-        <TechMarquee items={stripes[1]} reverse speed="54s" />
-        <TechMarquee items={stripes[2]} speed="62s" />
-      </div>
-    </section>
-
     <!-- BUILDING -->
     <section id="building" class="border-t border-border">
       <div class="mx-auto max-w-3xl px-6 py-12">
         <SectionTitle title="Currently Building" />
-        <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-[18px] md:grid-cols-3">
           {projects.map((p) => {
             const Tag = p.href ? "a" : "div";
             return (
@@ -173,13 +176,17 @@ const description =
   <footer id="contact" class="border-t border-border py-10 pb-15">
     <div class="mx-auto max-w-3xl px-6 text-sm text-faint">
       <div class="mb-3.5 flex flex-wrap gap-[18px]">
-        <a href={`mailto:${profile.email}`} class="text-accent hover:underline">{profile.email}</a>
+        <a href={`mailto:${profile.email}`} class="inline-flex items-center gap-1.5 text-accent hover:underline">
+          <SocialIcon name="mail" class="size-[15px]" />{profile.email}
+        </a>
         {links.filter((l) => l.label !== "Email").map((l) => (
-          <a href={l.href} target="_blank" rel="noopener" class="text-accent hover:underline">
-            {l.label}
+          <a href={l.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-accent hover:underline">
+            <SocialIcon name={l.icon} class="size-[15px]" />{l.label}
           </a>
         ))}
-        <a href={withBase(profile.resume)} target="_blank" rel="noopener" class="text-accent hover:underline">Résumé</a>
+        <a href={withBase(profile.resume)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-accent hover:underline">
+          <SocialIcon name="file" class="size-[15px]" />Résumé
+        </a>
       </div>
       <div class="font-mono">
         © {new Date().getFullYear()} Hesham Meneisi. Built with Astro and Tailwind.
