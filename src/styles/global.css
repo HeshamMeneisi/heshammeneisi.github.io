@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* True-black, polished palette */
+  --color-bg: #000000;
+  --color-bg-soft: #0a0a0d;
+  --color-card: #0d0d11;
+  --color-card-hover: #14141a;
+  --color-border: #1d1d24;
+  --color-ink: #ededf2;
+  --color-muted: #9ea0ad;
+  --color-faint: #65656f;
+  --color-accent: #3ddc84;
+  --color-accent-dim: #2bb56b;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Soft accent glow used behind the hero */
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 20% 0%, rgba(61, 220, 132, 0.10), transparent 70%),
+    radial-gradient(50% 50% at 100% 10%, rgba(61, 220, 132, 0.05), transparent 70%);
+}
+
+/* ---- Reveal-on-scroll ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Auto-scrolling tech stripes ---- */
+.marquee {
+  --gap: 0.7rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right, transparent, #000 7%, #000 93%, transparent
+  );
+  mask-image: linear-gradient(
+    to right, transparent, #000 7%, #000 93%, transparent
+  );
+}
+.marquee-track {
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  animation: marquee var(--speed, 42s) linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee-group {
+  display: flex;
+  gap: var(--gap);
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    /* two identical groups: shift by exactly one group + one gap */
+    transform: translateX(calc(-50% - var(--gap) / 2));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ---- Tech mini-card ---- */
+.tech-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  padding: 0.6rem 0.95rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.tech-card:hover {
+  background: var(--color-card-hover);
+  border-color: color-mix(in srgb, var(--brand, var(--color-accent)) 55%, var(--color-border));
+  transform: translateY(-2px);
+}
+.tech-logo {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--color-muted);
+  transition: color 0.2s ease;
+}
+.tech-card:hover .tech-logo {
+  color: var(--brand, var(--color-accent));
+}
+.tech-mono {
+  display: grid;
+  place-items: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.25rem;
+  flex-shrink: 0;
+  border-radius: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-bg);
+  background: var(--color-accent);
+}
+.tech-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}

@@ -1,0 +1,189 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import TechMarquee from "../components/TechMarquee.astro";
+import { stripes } from "../data/tech";
+import { withBase } from "../lib/base";
+import {
+  profile,
+  links,
+  metrics,
+  jobs,
+  earlier,
+  projects,
+  education,
+  languages,
+} from "../data/content";
+
+const title = "Hesham Meneisi — Data & Engineering Leader";
+const description =
+  "Hesham Meneisi — hands-on tech lead and engineering manager with 8+ years building financial-grade data platforms, payments, and APIs. Head of Data & Analytics at Onramp.";
+---
+
+<Layout title={title} description={description}>
+  <Nav />
+
+  <main>
+    <!-- HERO -->
+    <section class="relative mx-auto max-w-3xl px-6 pb-14 pt-20">
+      <div class="glow"></div>
+      <p class="reveal mb-3.5 font-mono text-sm font-semibold tracking-wide text-accent">
+        {profile.eyebrow}
+      </p>
+      <h1 class="reveal mb-4 text-[clamp(2.1rem,6vw,3.5rem)] font-extrabold leading-[1.05] tracking-tight">
+        {profile.name}
+      </h1>
+      <p class="reveal mb-3.5 max-w-2xl text-[clamp(1.05rem,2.4vw,1.25rem)] text-muted">
+        {profile.lead}
+      </p>
+      <p class="reveal mb-7 font-mono text-[15px] text-faint">{profile.location}</p>
+      <div class="reveal flex flex-wrap gap-3">
+        <a
+          href={withBase(profile.resume)}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 rounded-[10px] border border-accent bg-accent px-[18px] py-[11px] text-[15px] font-semibold text-[#06281a] transition hover:-translate-y-0.5 hover:bg-[#4ef193]"
+        >
+          View Résumé (PDF)
+        </a>
+        {links.map((l) => (
+          <a
+            href={l.href}
+            target={l.external ? "_blank" : undefined}
+            rel={l.external ? "noopener" : undefined}
+            class="inline-flex items-center gap-2 rounded-[10px] border border-border bg-card px-[18px] py-[11px] text-[15px] font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent-dim"
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" class="border-t border-border">
+      <div class="mx-auto max-w-3xl px-6 py-12">
+        <SectionTitle title="Impact" />
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {metrics.map((m) => (
+            <div class="reveal rounded-[14px] border border-border bg-card px-[18px] py-5">
+              <div class="text-[28px] font-extrabold tracking-tight text-accent">{m.num}</div>
+              <div class="mt-1 text-[13.5px] text-muted">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="border-t border-border">
+      <div class="mx-auto max-w-3xl px-6 py-12">
+        <SectionTitle title="Experience" />
+        {jobs.map((job, idx) => (
+          <div
+            class:list={[
+              "reveal grid grid-cols-1 gap-2 py-[22px] sm:grid-cols-[170px_1fr] sm:gap-5",
+              idx > 0 && "border-t border-border",
+            ]}
+          >
+            <div class="pt-0.5 font-mono text-sm text-faint">{job.when}</div>
+            <div>
+              <h3 class="mb-0.5 text-lg font-semibold tracking-tight text-accent">{job.org}</h3>
+              <div class="mb-2.5 text-[15px] text-muted">{job.role}</div>
+              <ul class="list-disc space-y-1.5 pl-[18px] text-muted marker:text-faint">
+                {job.points.map((p) => (
+                  <li set:html={p} class="[&_b]:font-semibold [&_b]:text-ink" />
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-border py-[22px] sm:grid-cols-[170px_1fr] sm:gap-5">
+          <div class="pt-0.5 font-mono text-sm text-faint">Earlier</div>
+          <p
+            set:html={earlier}
+            class="text-[14.5px] text-muted [&_b]:font-semibold [&_b]:text-ink"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / STACK -->
+    <section id="skills" class="overflow-hidden border-t border-border py-12">
+      <div class="mx-auto max-w-3xl px-6">
+        <SectionTitle title="Stack" />
+      </div>
+      <div class="mt-1 flex flex-col gap-3">
+        <TechMarquee items={stripes[0]} speed="46s" />
+        <TechMarquee items={stripes[1]} reverse speed="54s" />
+        <TechMarquee items={stripes[2]} speed="62s" />
+      </div>
+    </section>
+
+    <!-- BUILDING -->
+    <section id="building" class="border-t border-border">
+      <div class="mx-auto max-w-3xl px-6 py-12">
+        <SectionTitle title="Currently Building" />
+        <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
+          {projects.map((p) => {
+            const Tag = p.href ? "a" : "div";
+            return (
+              <Tag
+                href={p.href}
+                target={p.href ? "_blank" : undefined}
+                rel={p.href ? "noopener" : undefined}
+                class:list={[
+                  "reveal block rounded-[14px] border border-border bg-card p-[22px]",
+                  p.href && "transition hover:-translate-y-0.5 hover:border-accent-dim",
+                ]}
+              >
+                <h4 class="mb-2 text-base font-semibold text-ink">{p.title}</h4>
+                <p class="text-[15px] text-muted">{p.description}</p>
+              </Tag>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="border-t border-border">
+      <div class="mx-auto max-w-3xl px-6 py-12">
+        <SectionTitle title="Education" />
+        {education.map((e, idx) => (
+          <div
+            class:list={[
+              "reveal grid grid-cols-1 gap-2 py-[22px] sm:grid-cols-[170px_1fr] sm:gap-5",
+              idx === 0 ? "pt-0" : "border-t border-border",
+            ]}
+          >
+            <div class="pt-0.5 font-mono text-sm text-faint">{e.when}</div>
+            <div>
+              <h3 class="mb-0.5 text-lg font-semibold tracking-tight text-accent">{e.org}</h3>
+              <div class="text-[15px] text-muted">{e.role}</div>
+            </div>
+          </div>
+        ))}
+        <p class="reveal text-[14.5px] text-muted">{languages}</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="border-t border-border py-10 pb-15">
+    <div class="mx-auto max-w-3xl px-6 text-sm text-faint">
+      <div class="mb-3.5 flex flex-wrap gap-[18px]">
+        <a href={`mailto:${profile.email}`} class="text-accent hover:underline">{profile.email}</a>
+        {links.filter((l) => l.label !== "Email").map((l) => (
+          <a href={l.href} target="_blank" rel="noopener" class="text-accent hover:underline">
+            {l.label}
+          </a>
+        ))}
+        <a href={withBase(profile.resume)} target="_blank" rel="noopener" class="text-accent hover:underline">Résumé</a>
+      </div>
+      <div class="font-mono">
+        © {new Date().getFullYear()} Hesham Meneisi. Built with Astro and Tailwind.
+      </div>
+    </div>
+  </footer>
+</Layout>
