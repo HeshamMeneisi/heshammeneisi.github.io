@@ -39,3 +39,11 @@ jobs:
           publish_dir: ./dist
           # Keep PR preview directories (pr-preview/*) that live on gh-pages.
           keep_files: true
+
+      - name: Write job summary
+        run: |
+          {
+            echo "### 🚀 Deployed to GitHub Pages"
+            echo ""
+            echo "Live site: <https://heshammeneisi.github.io/>"
+          } >> "$GITHUB_STEP_SUMMARY"
