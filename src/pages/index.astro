@@ -64,7 +64,7 @@ const description =
     <section id="impact" class="border-t border-border">
       <div class="mx-auto max-w-3xl px-6 py-12">
         <SectionTitle title="Impact" />
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
           {metrics.map((m) => (
             <div class="reveal rounded-[14px] border border-border bg-card px-[18px] py-5">
               <div class="text-[28px] font-extrabold tracking-tight text-accent">{m.num}</div>
@@ -124,7 +124,7 @@ const description =
     <section id="building" class="border-t border-border">
       <div class="mx-auto max-w-3xl px-6 py-12">
         <SectionTitle title="Currently Building" />
-        <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-[18px] md:grid-cols-3">
           {projects.map((p) => {
             const Tag = p.href ? "a" : "div";
             return (

@@ -44,7 +44,9 @@ export const links: Link[] = [
 export const metrics: Metric[] = [
   { num: "€400K", label: "legacy discrepancies uncovered" },
   { num: "83%", label: "fewer production incidents" },
+  { num: "½", label: "cash-volume loss" },
   { num: "50%", label: "infrastructure cost reduction" },
+  { num: "500+", label: "pipelines modernized" },
   { num: "2m → 1.5s", label: "warehouse query latency" },
 ];
 
@@ -108,6 +110,11 @@ export const projects: Project[] = [
     title: "Daily AI agents",
     description:
       "I keep a few agents running each day for coding, research, and analysis, and build systems that are easy for them to work in.",
+  },
+  {
+    title: "LLM-native codebases & teams",
+    description:
+      "Shaping repos, docs, and team process around AI agents as everyday contributors rather than bolt-ons.",
   },
 ];
 
