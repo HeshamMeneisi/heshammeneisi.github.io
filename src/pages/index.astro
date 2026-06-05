@@ -78,6 +78,18 @@ const description =
       </div>
     </section>
 
+    <!-- SKILLS / STACK -->
+    <section id="skills" class="overflow-hidden border-t border-border py-12">
+      <div class="mx-auto max-w-3xl px-6">
+        <SectionTitle title="Stack" />
+      </div>
+      <div class="mt-1 flex flex-col gap-3">
+        <TechMarquee items={stripes[0]} speed="46s" />
+        <TechMarquee items={stripes[1]} reverse speed="54s" />
+        <TechMarquee items={stripes[2]} speed="62s" />
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section id="experience" class="border-t border-border">
       <div class="mx-auto max-w-3xl px-6 py-12">
@@ -108,18 +120,6 @@ const description =
             class="text-[14.5px] text-muted [&_b]:font-semibold [&_b]:text-ink"
           />
         </div>
-      </div>
-    </section>
-
-    <!-- SKILLS / STACK -->
-    <section id="skills" class="overflow-hidden border-t border-border py-12">
-      <div class="mx-auto max-w-3xl px-6">
-        <SectionTitle title="Stack" />
-      </div>
-      <div class="mt-1 flex flex-col gap-3">
-        <TechMarquee items={stripes[0]} speed="46s" />
-        <TechMarquee items={stripes[1]} reverse speed="54s" />
-        <TechMarquee items={stripes[2]} speed="62s" />
       </div>
     </section>
 
