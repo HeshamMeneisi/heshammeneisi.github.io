@@ -1,0 +1,37 @@
+---
+import { getIcon } from "../lib/icons";
+import { customIcons } from "../lib/customIcons";
+
+interface Props {
+  name: string;
+  slug?: string;
+  mono?: string;
+}
+
+const { name, slug, mono } = Astro.props;
+const icon = getIcon(slug);
+const custom = !icon ? customIcons[name] : undefined;
+const brandHex = icon?.hex ?? custom?.hex;
+const monogram = mono ?? name.replace(/[^A-Za-z0-9]/g, "").slice(0, 2);
+---
+
+<div class="tech-card" style={brandHex ? `--brand:#${brandHex}` : undefined}>
+  {
+    icon ? (
+      <svg class="tech-logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d={icon.path} />
+      </svg>
+    ) : custom ? (
+      <svg
+        class="tech-logo"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+        set:html={custom.svg}
+      />
+    ) : (
+      <span class="tech-mono" aria-hidden="true">{monogram}</span>
+    )
+  }
+  <span class="tech-name">{name}</span>
+</div>
