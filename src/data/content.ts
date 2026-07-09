@@ -47,8 +47,8 @@ export const metrics: Metric[] = [
   { num: "€10M+", label: "monthly volume reconciled to a < €5 gap" },
   { num: "83%", label: "fewer production incidents" },
   { num: "½", label: "cash-volume loss" },
-  { num: "50%", label: "infrastructure cost reduction" },
-  { num: "500+", label: "data assets modernized" },
+  { num: "43%", label: "infrastructure cost reduction" },
+  { num: "TB → GB", label: "payment-pipeline scan footprint" },
   { num: "2m → 1.5s", label: "warehouse query latency" },
 ];
 
@@ -58,10 +58,10 @@ export const jobs: Job[] = [
     org: "Onramp",
     role: "Head of Data and Analytics",
     points: [
-      "Restructured the data function into an <b>AI-first operating model</b>: 3 engineers running <b>10–15 parallel agents</b> daily — coding, research, docs, and ad-hoc analysis — serving operations, finance, and customer service.",
-      "Held agent-assisted pipelines to audit-grade accuracy: <b>€10M+ monthly volume</b> reconciled across internal data, acquirers, banks, and wallets to a total discrepancy <b>under €5</b>.",
-      "Built a <b>lakehouse on Azure</b> that replaced fragmented legacy reporting with auditable, reconciled pipelines, and cut infrastructure cost <b>50%</b>.",
-      "Own <b>300+ governed data assets</b>, 30+ self-serve dashboards, and 5 Terraform infra repos with a 3-person team — stakeholders answer their own questions without routing through the data team.",
+      "Restructured the data function into an <b>AI-first operating model</b>: 3 engineers running <b>10–15 parallel agents</b> daily — winning executive buy-in by demonstrating critical dashboards built and validated in <b>hours instead of days</b>.",
+      "Held agent-assisted pipelines to audit-grade accuracy: <b>€10M+ monthly volume</b> reconciled across internal data, acquirers, banks, and wallets down to rounding errors — a total discrepancy <b>under €5</b>.",
+      "Replaced <b>188 static dashboards with 30</b> governed self-serve dashboards and an org-wide Claude SQL skill — adopted across operations, finance, compliance, and support, cutting data-team requests from <b>20+/month to 0–2</b>.",
+      "Built a <b>lakehouse on Azure</b> (300+ governed assets) that retired the fragmented legacy stack and cut infrastructure cost <b>43%</b>.",
       "Designed the platform so agents operate it directly: everything as code, fixed repo patterns, and an ADR for every architecture decision — agents open reviewable cross-repo PRs.",
       "Automated bi-monthly statement generation and reconciliation — replacing a 2–3 day manual cycle — and standardized financial close across the org.",
     ],
@@ -83,7 +83,7 @@ export const jobs: Job[] = [
     role: "Lead Data Engineer · Team of 7",
     points: [
       "Shipped a third-party <b>clearing/settlement integration in under a month</b> against a multi-month estimate, with a 3-engineer team.",
-      "Modernized <b>500+ assets</b> processing terabytes of payment data, cutting failures from near-daily to a few a month.",
+      "Rebuilt the payment pipelines — failures fell from near-daily to <b>a few a month</b> and scans dropped from <b>terabytes to gigabytes</b>.",
       "Deployed Superset dashboards and Spark on Kubernetes for delta-table processing and CDC ingestion.",
       "Mentored mid-level engineers to senior while the team kept shipping.",
     ],
