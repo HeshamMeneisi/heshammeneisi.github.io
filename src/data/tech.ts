@@ -28,9 +28,11 @@ export const stripes: Tech[][] = [
     { name: "Airflow", slug: "apacheairflow" },
     { name: "Dagster", mono: "Dg" },
     { name: "dbt", mono: "dbt" },
+    { name: "Snowflake", slug: "snowflake" },
     { name: "Redshift", mono: "Rs" },
     { name: "BigQuery", slug: "googlebigquery" },
     { name: "Superset", slug: "apachesuperset" },
+    { name: "Soda", mono: "Sda" },
   ],
   // Cloud, tools & frameworks
   [
